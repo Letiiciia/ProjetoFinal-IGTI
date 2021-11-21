@@ -4,10 +4,7 @@ import igti.desafio.modelo.Pedido;
 import igti.desafio.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,8 +16,9 @@ public class PedidoService {
 
     public Pedido criarPedido(Pedido pedido) {
         try {
-        pedido = pedidoRepository.save(pedido);
-        return pedido;
+            pedido.setSituacao(Pedido.SITUACAO_AGUARDANDO);
+            pedido = pedidoRepository.save(pedido);
+            return pedido;
         }catch (Exception e) {
             e.printStackTrace();
             return null;
