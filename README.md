@@ -1,4 +1,4 @@
-### Projeto do back end de uma aplicação delivery
+### Projeto do back end de uma aplicação delivery com Spring boot e java e Angular no front end
 
 ### 🎲 Endpoints
 - Criar pedido
